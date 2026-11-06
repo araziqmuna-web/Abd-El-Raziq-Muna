@@ -1,0 +1,47 @@
+---
+interface Pub {
+  year: number; status: string; title: string; authors: string; venue: string;
+  doi: string; openAccess: boolean; topics: string[]; summary: string;
+}
+interface Props { pub: Pub; showSummary?: boolean }
+const { pub, showSummary = true } = Astro.props;
+
+// Colors for each topic label. To add a new topic, copy a line and change the name.
+const colors: Record<string, string> = {
+  Phonology:    "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]",
+  Morphosyntax: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]",
+  Vocabulary:   "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]",
+  Cognition:    "bg-[#f3dad6] text-[#7a3127] dark:bg-[#40272a] dark:text-[#f2c1b9]",
+  Bilingualism: "bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]",
+  Review:       "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac6]",
+};
+const fallback = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac6]";
+
+// Bold Muna's name in the author list
+const authors = pub.authors.replace(/Abd El-Raziq, M\.\*?/g, (m) => `<strong class="font-semibold text-ink dark:text-night-ink">${m}</strong>`);
+const link = pub.doi ? `https://doi.org/${pub.doi}` : "";
+---
+<article class="py-6 border-b border-rule dark:border-night-rule" data-topics={pub.topics.join("|")}>
+  <h3 class="font-serif text-lg sm:text-xl font-semibold leading-snug">
+    {link ? <a href={link} class="hover:text-accent dark:hover:text-night-accent hover:underline">{pub.title}</a> : pub.title}
+  </h3>
+  <p class="mt-1.5 text-[15px] text-muted dark:text-night-muted" set:html={authors} />
+  <p class="mt-1 text-[15px] text-muted dark:text-night-muted">
+    {pub.venue && <em>{pub.venue}</em>}
+    {pub.status !== "published" && <span class="ml-1 inline-block text-xs font-semibold border border-rule dark:border-night-rule rounded px-1.5 py-0.5 align-middle">{pub.status}</span>}
+    {pub.openAccess && <span class="ml-1 text-accent dark:text-night-accent font-medium">Open access</span>}
+  </p>
+  <div class="mt-3 flex flex-wrap gap-2">
+    {pub.topics.map((t) => (
+      <span class={`inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${colors[t] ?? fallback}`}>{t}</span>
+    ))}
+  </div>
+  {showSummary && pub.summary && (
+    <details class="mt-3 group">
+      <summary class="cursor-pointer text-sm font-semibold text-accent dark:text-night-accent list-none">
+        <span class="group-open:hidden">In short</span><span class="hidden group-open:inline">Hide</span>
+      </summary>
+      <p class="mt-2 max-w-[65ch]">{pub.summary}</p>
+    </details>
+  )}
+</article>
