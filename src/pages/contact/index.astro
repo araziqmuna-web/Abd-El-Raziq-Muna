@@ -1,0 +1,36 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import site from "../../data/site.json";
+const field = "w-full rounded-lg border border-rule dark:border-night-rule bg-white dark:bg-white/[0.04] px-3.5 py-2.5 text-base focus:border-accent dark:focus:border-night-accent outline-none";
+---
+<Base title="Contact">
+  <PageTitle title="Contact" intro="I’m happy to hear from researchers, clinicians, students, and families interested in language and autism." />
+
+  <div class="grid gap-10 sm:grid-cols-[1fr_1.4fr]">
+    <div class="space-y-5">
+      <div>
+        <h2 class="font-semibold">Email</h2>
+        <a class="text-accent dark:text-night-accent break-all" href={`mailto:${site.email}`}>{site.email}</a>
+      </div>
+      <div>
+        <h2 class="font-semibold">ORCID</h2>
+        <a class="text-accent dark:text-night-accent" href={site.orcid}>0000-0002-1866-2040</a>
+      </div>
+      <div>
+        <h2 class="font-semibold">Languages</h2>
+        <p class="text-muted dark:text-night-muted">You can write to me in Arabic, Hebrew, or English.</p>
+      </div>
+    </div>
+
+    <!-- Netlify Forms: messages appear in your Netlify dashboard under Forms -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="company" action="/contact/thanks/" class="space-y-4">
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden"><label>Leave this empty <input name="company" /></label></p>
+      <div><label for="name" class="block font-medium mb-1">Name</label><input id="name" name="name" required autocomplete="name" class={field} /></div>
+      <div><label for="email" class="block font-medium mb-1">Email</label><input id="email" type="email" name="email" required autocomplete="email" class={field} /></div>
+      <div><label for="message" class="block font-medium mb-1">Message</label><textarea id="message" name="message" rows="6" required class={field}></textarea></div>
+      <button type="submit" class="rounded-lg bg-accent text-white dark:bg-night-accent dark:text-night px-5 py-2.5 font-semibold">Send message</button>
+    </form>
+  </div>
+</Base>

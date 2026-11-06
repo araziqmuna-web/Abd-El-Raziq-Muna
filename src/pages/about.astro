@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Section from "../components/Section.astro";
+import Row from "../components/Row.astro";
+---
+<Base title="About">
+  <PageTitle title="About" intro="Linguist, speech-language pathologist, and researcher of child language in autism." />
+
+  <div class="space-y-5 max-w-[65ch]">
+    <p>I completed my Ph.D. in Linguistics in Clinical Research at Bar-Ilan University, where my dissertation described the language profiles of Palestinian-Arabic-speaking children with autism, under the supervision of Prof. Natalia Meir and Prof. Elinor Saiegh-Haddad.</p>
+    <p>Since then I have held postdoctoral fellowships at the Hebrew University of Jerusalem, the University of Fribourg in Switzerland, and New York University, where I am a Fulbright Postdoctoral Fellow. I am a member of the LACA network (Language Abilities in Children with Autism).</p>
+    <p>Before and alongside research, I have worked as a speech-language pathologist since 2010, assessing and treating autistic children and children with developmental language disorder. That clinical work shapes the questions I ask.</p>
+  </div>
+
+  <Section title="Positions">
+    <Row when="2025–2026"><p>Fulbright Postdoctoral Fellow, Communicative Sciences and Disorders, New York University</p><p class="text-[15px] text-muted dark:text-night-muted">LEARN Lab, Prof. Sudha Arunachalam</p></Row>
+    <Row when="2024–2025"><p>Postdoctoral Fellow, ABCCD Lab, University of Fribourg, Switzerland</p><p class="text-[15px] text-muted dark:text-night-muted">Prof. Stéphanie Durrleman</p></Row>
+    <Row when="2024–2025"><p>Postdoctoral Fellow, Autism Child and Family Lab, Hebrew University of Jerusalem</p><p class="text-[15px] text-muted dark:text-night-muted">Dr. Judah Koller</p></Row>
+  </Section>
+
+  <Section title="Education">
+    <Row when="2020–2024"><p>Ph.D. in Linguistics in Clinical Research, Bar-Ilan University</p><p class="text-[15px] text-muted dark:text-night-muted">Language Profiles of Palestinian-Arabic-Speaking Children with Autism Spectrum Disorder</p></Row>
+    <Row when="2012–2015"><p>M.A. in Communication Disorders, Tel Aviv University</p><p class="text-[15px] text-muted dark:text-night-muted">Reading and bilingualism among Arabic–Hebrew bilinguals</p></Row>
+    <Row when="2006–2010"><p>B.A. in Communication Disorders, Tel Aviv University</p></Row>
+  </Section>
+
+  <Section title="Selected awards">
+    <Row when="2026–2027"><p>Bloom Excellence Postdoctoral Fellowship, University of Haifa</p></Row>
+    <Row when="2026"><p>Simons Foundation Travel Award, Meeting on Language in Autism</p></Row>
+    <Row when="2026"><p>NYU Postdoctoral Affairs Support Grant</p></Row>
+    <Row when="2026"><p>ASHA Pathways Program (early-career grant mentoring)</p></Row>
+    <Row when="2025"><p>Fulbright Postdoctoral Fellowship</p></Row>
+    <Row when="2025"><p>Bar-Ilan University Postdoctoral Award for Women</p></Row>
+    <Row when="2024"><p>President’s Prize for Three Published Papers, Bar-Ilan University</p></Row>
+    <Row when="2023"><p>Dean’s Excellence Prize, Faculty of Humanities, Bar-Ilan University</p></Row>
+    <Row when="2022"><p>Prof. Rahamimoff Travel Grant, U.S.–Israel Binational Science Foundation</p></Row>
+  </Section>
+
+  <Section title="Clinical experience">
+    <Row when="2013–2025"><p>Speech-language pathologist in private practice, Tayibe</p></Row>
+    <Row when="2022"><p>Communication and language development instructor, Clinical Center for Child Development, University of Haifa</p></Row>
+    <Row when="2014–2019"><p>Speech-language pathologist, public kindergartens, Ministry of Education</p></Row>
+    <Row when="2011–2014"><p>Speech-language pathologist, Child Development Center, Clalit Health Services, Jaffa</p></Row>
+    <Row when="2010–2019"><p>Speech-language pathologist, autism kindergarten (ages 1–3), Association for Children at Risk</p></Row>
+    <p class="mt-4 text-[15px] text-muted dark:text-night-muted">Trained in ADOS-2 and ADI-R. Licensed speech-language pathologist (Israel, 2010).</p>
+  </Section>
+
+  <Section title="Skills and languages">
+    <p class="max-w-[65ch]">R (mixed-effects models, network and cluster analysis, eye-tracking data), CLAN transcription and coding, and EyeLink experiment design. I speak Arabic and Hebrew natively, and English.</p>
+  </Section>
+</Base>

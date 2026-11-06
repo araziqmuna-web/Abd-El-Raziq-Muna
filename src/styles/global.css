@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Dark mode follows a .dark class on <html> (set by the toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-arabic: "Noto Naskh Arabic", "Geeza Pro", serif;
+
+  --color-paper: #f6f5f1;
+  --color-ink: #1f2433;
+  --color-muted: #5d6272;
+  --color-rule: #dcdbd4;
+  --color-accent: #2d4f86;
+
+  --color-night: #15181f;
+  --color-night-ink: #e7e9ef;
+  --color-night-muted: #9ca2b3;
+  --color-night-rule: #2c3140;
+  --color-night-accent: #a3bce6;
+}
+
+html { scroll-padding-top: 5rem; }
+body { -webkit-font-smoothing: antialiased; }
+a { text-underline-offset: 4px; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 3px; }
+.dark :focus-visible { outline-color: var(--color-night-accent); }

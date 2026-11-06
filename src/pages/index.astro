@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import Publication from "../components/Publication.astro";
+import site from "../data/site.json";
+import pubs from "../data/publications.json";
+
+const recent = pubs.filter((p) => p.status === "published").sort((a, b) => b.year - a.year).slice(0, 3);
+---
+<Base>
+  <p lang="ar" dir="rtl" class="font-arabic text-2xl text-muted dark:text-night-muted mb-2 text-left">أهلاً وسهلاً</p>
+  <h1 class="font-serif text-5xl sm:text-6xl leading-[1.04] tracking-tight">{site.name}</h1>
+  <p class="mt-3 font-medium text-muted dark:text-night-muted">{site.credentials}. {site.role}.</p>
+
+  <p class="mt-8 text-xl sm:text-2xl font-serif leading-snug max-w-[34ch]">
+    I study how autistic children who speak Arabic learn language, and why their language profiles differ so much from one child to the next.
+  </p>
+  <p class="mt-6 max-w-[62ch]">
+    I’m a linguist and a licensed speech-language pathologist. My research looks at sounds, grammar, and vocabulary in autism, and at how language connects to theory of mind and other thinking skills, with a special focus on Arabic diglossia.
+  </p>
+
+  <div class="mt-8 flex flex-wrap gap-3">
+    <a href="/research/" class="rounded-lg bg-accent text-white dark:bg-night-accent dark:text-night px-5 py-2.5 font-semibold">My research</a>
+    <a href="/publications/" class="rounded-lg border border-accent text-accent dark:border-night-accent dark:text-night-accent px-5 py-2.5 font-semibold">Publications</a>
+  </div>
+
+  <section class="mt-14 rounded-2xl border border-rule dark:border-night-rule bg-white/60 dark:bg-white/[0.03] p-6 sm:p-7">
+    <h2 class="font-serif text-2xl font-semibold mb-3">Now</h2>
+    <p>At NYU’s LEARN Lab with Prof. Sudha Arunachalam, I’m studying early two-word combinations in autistic preschoolers and vocabulary in Arabic–English bilingual children using eye-tracking.</p>
+    <p class="mt-3">Next: the Bloom Excellence Postdoctoral Fellowship at the University of Haifa, 2026–2027.</p>
+  </section>
+
+  <section class="mt-14">
+    <div class="flex items-baseline justify-between gap-4 mb-1">
+      <h2 class="font-serif text-2xl font-semibold">Recent publications</h2>
+      <a href="/publications/" class="text-sm font-semibold text-accent dark:text-night-accent">See all</a>
+    </div>
+    {recent.map((p) => <Publication pub={p} showSummary={false} />)}
+  </section>
+</Base>

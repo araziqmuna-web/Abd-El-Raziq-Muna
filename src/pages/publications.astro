@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Publication from "../components/Publication.astro";
+import pubs from "../data/publications.json";
+
+// Everything here comes from src/data/publications.json
+const published = pubs.filter((p) => p.status === "published").sort((a, b) => b.year - a.year);
+const forthcoming = pubs.filter((p) => p.status !== "published");
+const years = [...new Set(published.map((p) => p.year))];
+const topics = [...new Set(pubs.flatMap((p) => p.topics))];
+---
+<Base title="Publications">
+  <PageTitle title="Publications" intro="Peer-reviewed articles, newest first. Titles link to the published version." />
+
+  <div class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filter by topic" id="filters">
+    {["All", ...topics].map((t, i) => (
+      <button type="button" data-topic={t} aria-pressed={i === 0 ? "true" : "false"}
+        class="rounded-full border border-rule dark:border-night-rule px-3.5 py-1.5 text-sm font-medium aria-pressed:bg-accent aria-pressed:text-white aria-pressed:border-accent dark:aria-pressed:bg-night-accent dark:aria-pressed:text-night dark:aria-pressed:border-night-accent">{t}</button>
+    ))}
+  </div>
+
+  {years.map((y) => (
+    <section class="year-group">
+      <h2 class="font-serif text-2xl font-semibold mt-10 mb-1 text-muted dark:text-night-muted">{y}</h2>
+      {published.filter((p) => p.year === y).map((p) => <Publication pub={p} />)}
+    </section>
+  ))}
+
+  {forthcoming.length > 0 && (
+    <section class="year-group">
+      <h2 class="font-serif text-2xl font-semibold mt-12 mb-1 text-muted dark:text-night-muted">Under review and in preparation</h2>
+      {forthcoming.map((p) => <Publication pub={p} />)}
+    </section>
+  )}
+
+  <p id="empty" class="hidden mt-8 text-muted dark:text-night-muted">No publications with this topic yet.</p>
+</Base>
+
+<script is:inline>
+  (function () {
+    var buttons = document.querySelectorAll("#filters button");
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var topic = b.dataset.topic;
+        buttons.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        var any = false;
+        document.querySelectorAll(".year-group").forEach(function (g) {
+          var shown = 0;
+          g.querySelectorAll("article").forEach(function (a) {
+            var ok = topic === "All" || a.dataset.topics.split("|").indexOf(topic) > -1;
+            a.hidden = !ok; if (ok) shown++;
+          });
+          g.hidden = shown === 0; if (shown) any = true;
+        });
+        document.getElementById("empty").classList.toggle("hidden", any);
+      });
+    });
+  })();
+</script>

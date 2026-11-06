@@ -1,0 +1,38 @@
+---
+import Base from "../layouts/Base.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Section from "../components/Section.astro";
+import Row from "../components/Row.astro";
+---
+<Base title="Teaching">
+  <PageTitle title="Teaching and mentoring" intro="I teach research methods, train students in language analysis, and bring clinical experience into the classroom." />
+
+  <Section title="Teaching">
+    <Row when="Bar-Ilan"><p>Teaching Assistant, Research Methods in Linguistics (undergraduate)</p><p class="text-[15px] text-muted dark:text-night-muted">Department of English Literature and Linguistics, Bar-Ilan University</p></Row>
+    <Row when="2022"><p>Communication and Language Development Instructor</p><p class="text-[15px] text-muted dark:text-night-muted">Clinical Center for Child Development (ages 1.5–3), University of Haifa</p></Row>
+  </Section>
+
+  <Section title="Student mentorship">
+    <Row when="2026–now">
+      <p>LEARN Lab, New York University</p>
+      <p class="text-[15px] text-muted dark:text-night-muted mt-1">I train and supervise student researchers in transcript coding, annotation guidelines, and inter-rater reliability for a project on word combinations in autistic children, in collaboration with Prof. Rhiannon Luyster (Emerson College).</p>
+      <ul class="mt-3 space-y-1 text-[15px]">
+        <li>Ellen Ailun Guo, M.A. student, Communicative Sciences and Disorders, NYU</li>
+        <li>Polina Derkach, undergraduate, Applied Psychology, NYU</li>
+        <li>Sabrina Lim, B.S. student, Communicative Sciences and Disorders, NYU</li>
+      </ul>
+    </Row>
+    <Row when="2024–2025">
+      <p>Autism Child and Family Lab, Hebrew University of Jerusalem</p>
+      <ul class="mt-2 space-y-1 text-[15px]">
+        <li>Nur Manaa, M.A. student, Clinical and Educational Child Psychology</li>
+      </ul>
+    </Row>
+  </Section>
+
+  <Section title="Professional training">
+    <Row when="2026"><p>ASHA Pathways Program, mentored by Dr. Eileen Haebig</p></Row>
+    <Row when="2021"><p>MultiLing Summer School, University of Oslo: Open Science Practices in Experimental Psycholinguistics</p></Row>
+    <Row when="2019–2020"><p>ADOS-2 and ADI-R training, Hebrew University</p></Row>
+  </Section>
+</Base>

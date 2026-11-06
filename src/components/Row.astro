@@ -1,0 +1,9 @@
+---
+// A simple two-column row for dates and details (stacks on phones)
+interface Props { when: string }
+const { when } = Astro.props;
+---
+<div class="grid sm:grid-cols-[8.5rem_1fr] gap-x-6 gap-y-1 py-3.5 border-b border-rule dark:border-night-rule">
+  <div class="text-sm font-semibold text-muted dark:text-night-muted pt-0.5">{when}</div>
+  <div><slot /></div>
+</div>
