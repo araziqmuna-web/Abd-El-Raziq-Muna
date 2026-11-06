@@ -33,6 +33,6 @@ const recent = pubs.filter((p) => p.status === "published").sort((a, b) => b.yea
       <h2 class="font-serif text-2xl font-semibold">Recent publications</h2>
       <a href="/publications/" class="text-sm font-semibold text-accent dark:text-night-accent">See all</a>
     </div>
-    {recent.map((p) => <Publication pub={p} showSummary={false} />)}
+    {recent.map((p) => <Publication pub={p} showSummary={true} />)}
   </section>
 </Base>
