@@ -3,22 +3,58 @@ import Base from "../layouts/Base.astro";
 import PageTitle from "../components/PageTitle.astro";
 import Section from "../components/Section.astro";
 import Row from "../components/Row.astro";
+import Publication from "../components/Publication.astro";
 import talks from "../data/talks.json";
+import pubs from "../data/publications.json";
 
+// Each research theme has its own color (same colors as the publication labels)
 const themes = [
-  { title: "Language profiles in autism", text: "Not every autistic child has the same language strengths and needs. Using sentence repetition, non-word repetition, and vocabulary tasks, I map which language areas are spared or affected in each child, and I use cluster analysis to find distinct profiles." },
-  { title: "Arabic diglossia", text: "Arabic-speaking children grow up with a spoken dialect at home and Modern Standard Arabic at school. I study how this shapes vocabulary learning in autism, including which variety of Arabic autistic children prefer to use." },
-  { title: "Language, theory of mind, and cognition", text: "How does language relate to understanding other people’s minds, executive functions, and nonverbal reasoning? Network analyses suggest language sits at the center of these skills in autistic children." },
-  { title: "Bilingualism and memory", text: "With colleagues in Fribourg, I compare monolingual and bilingual autistic children to see how working memory and bilingual experience relate to understanding complex sentences." },
+  {
+    title: "Language profiles in autism",
+    label: "Morphosyntax and phonology",
+    card: "bg-[#efe7f6] border-[#8a63b3] dark:bg-[#2a2333] dark:border-[#b597d6]",
+    pill: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]",
+    text: "Not every autistic child has the same language strengths and needs. Using sentence repetition, non-word repetition, and vocabulary tasks, I map which language areas are spared or affected in each child, and I use cluster analysis to find distinct profiles.",
+  },
+  {
+    title: "Arabic diglossia",
+    label: "Vocabulary",
+    card: "bg-[#e3f1eb] border-[#3f8a72] dark:bg-[#1c2f29] dark:border-[#7cc4aa]",
+    pill: "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]",
+    text: "Arabic-speaking children grow up with a spoken dialect at home and Modern Standard Arabic at school. I study how this shapes vocabulary learning in autism, including which variety of Arabic autistic children prefer to use.",
+  },
+  {
+    title: "Language, theory of mind, and cognition",
+    label: "Cognition",
+    card: "bg-[#f8e7e4] border-[#c0604f] dark:bg-[#33221f] dark:border-[#e59a8c]",
+    pill: "bg-[#f3dad6] text-[#7a3127] dark:bg-[#40272a] dark:text-[#f2c1b9]",
+    text: "How does language relate to understanding other people’s minds, executive functions, and nonverbal reasoning? Network analyses suggest language sits at the center of these skills in autistic children.",
+  },
+  {
+    title: "Bilingualism and memory",
+    label: "Bilingualism",
+    card: "bg-[#e6eef8] border-[#4a77b4] dark:bg-[#1d2738] dark:border-[#8fb2e3]",
+    pill: "bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]",
+    text: "With colleagues in Fribourg, I compare monolingual and bilingual autistic children to see how working memory and bilingual experience relate to understanding complex sentences.",
+  },
 ];
+
+// Colors for the talk labels
+const talkColors: Record<string, string> = {
+  Invited: "bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]",
+  Talk:    "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]",
+  Poster:  "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]",
+};
+const neutral = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac6]";
 ---
 <Base title="Research">
   <PageTitle title="Research" intro="I study language development in autistic children, with a focus on Palestinian Arabic, a language that has been underrepresented in autism research." />
 
-  <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+  <div class="grid gap-5 sm:grid-cols-2">
     {themes.map((t) => (
-      <div class="border-t-2 border-accent dark:border-night-accent pt-4">
-        <h2 class="font-serif text-xl font-semibold mb-2">{t.title}</h2>
+      <div class={`rounded-2xl border-t-4 p-6 ${t.card}`}>
+        <span class={`inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${t.pill}`}>{t.label}</span>
+        <h2 class="font-serif text-xl font-semibold mt-3 mb-2">{t.title}</h2>
         <p>{t.text}</p>
       </div>
     ))}
@@ -30,14 +66,23 @@ const themes = [
     <Row when="Bar-Ilan"><p>Morpho-lexical and morpho-syntactic development in Arabic-speaking toddlers, an Israel Science Foundation project with Prof. Elinor Saiegh-Haddad.</p></Row>
   </Section>
 
+  <Section title="Publications">
+    {pubs.filter((p) => p.status === "published").map((p) => <Publication pub={p} />)}
+  </Section>
+
   <Section title="Selected talks">
-    <p class="text-muted dark:text-night-muted mb-2">8 invited talks, 23 conference talks, and 14 posters to date.</p>
+    <div class="flex flex-wrap gap-x-8 gap-y-3 mb-4">
+      <div><span class="font-serif text-3xl font-semibold">8</span> <span class="text-muted dark:text-night-muted">invited talks</span></div>
+      <div><span class="font-serif text-3xl font-semibold">23</span> <span class="text-muted dark:text-night-muted">conference talks</span></div>
+      <div><span class="font-serif text-3xl font-semibold">14</span> <span class="text-muted dark:text-night-muted">posters</span></div>
+    </div>
     {talks.map((t) => (
       <Row when={t.date}>
-        <p class="text-sm font-semibold text-accent dark:text-night-accent">{t.type}</p>
-        <p class="font-medium">{t.title}</p>
+        <span class={`inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${talkColors[t.type] ?? neutral}`}>{t.type}</span>
+        <p class="font-medium mt-1.5">{t.title}</p>
         <p class="text-[15px] text-muted dark:text-night-muted">{t.where}</p>
       </Row>
     ))}
   </Section>
 </Base>
+
