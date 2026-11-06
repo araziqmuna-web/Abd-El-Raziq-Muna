@@ -7,21 +7,30 @@ import Publication from "../components/Publication.astro";
 import talks from "../data/talks.json";
 import pubs from "../data/publications.json";
 
-// Each research theme has its own color (same colors as the publication labels)
+// Each research theme has its own color (same colors as the publication labels).
+// "wide: true" makes a card stretch across the whole row.
 const themes = [
   {
-    title: "Language profiles in autism",
+    title: "Arabic as a natural test case",
+    label: "Diglossia",
+    wide: true,
+    card: "bg-[#e3f1eb] border-[#3f8a72] dark:bg-[#1c2f29] dark:border-[#7cc4aa]",
+    pill: "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]",
+    text: "Arabic-speaking children grow up with two language varieties: a spoken dialect at home and Modern Standard Arabic at school. Most children naturally prefer the spoken dialect. Yet some autistic children begin using Modern Standard Arabic instead, a finding that pushes us to rethink how language develops in autism.",
+  },
+  {
+    title: "Many language profiles",
     label: "Morphosyntax and phonology",
     card: "bg-[#efe7f6] border-[#8a63b3] dark:bg-[#2a2333] dark:border-[#b597d6]",
     pill: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]",
-    text: "Not every autistic child has the same language strengths and needs. Using sentence repetition, non-word repetition, and vocabulary tasks, I map which language areas are spared or affected in each child, and I use cluster analysis to find distinct profiles.",
+    text: "Using sentence repetition, non-word repetition, and vocabulary tasks, I map which language areas are spared or affected in each child. Cluster analyses reveal several distinct profiles rather than one autistic pattern.",
   },
   {
-    title: "Arabic diglossia",
+    title: "Learning through strong interests",
     label: "Vocabulary",
-    card: "bg-[#e3f1eb] border-[#3f8a72] dark:bg-[#1c2f29] dark:border-[#7cc4aa]",
-    pill: "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]",
-    text: "Arabic-speaking children grow up with a spoken dialect at home and Modern Standard Arabic at school. I study how this shapes vocabulary learning in autism, including which variety of Arabic autistic children prefer to use.",
+    card: "bg-[#f7eedd] border-[#b8862f] dark:bg-[#2f2818] dark:border-[#e0bd7a]",
+    pill: "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]",
+    text: "A child’s fascination with a video game is often described as repetitive behavior. In the children I work with, it can also reveal vocabulary, curiosity, and learning. I study how strong interests can open pathways into language.",
   },
   {
     title: "Language, theory of mind, and cognition",
@@ -48,17 +57,40 @@ const talkColors: Record<string, string> = {
 const neutral = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac6]";
 ---
 <Base title="Research">
-  <PageTitle title="Research" intro="I study language development in autistic children, with a focus on Palestinian Arabic, a language that has been underrepresented in autism research." />
+  <PageTitle title="Research" />
+
+  <p class="font-serif text-2xl sm:text-3xl leading-snug max-w-[30ch]">
+    Autism doesn’t have one language pathway. It has many.
+  </p>
+
+  <div class="mt-6 space-y-4 max-w-[65ch]">
+    <p>For decades, research has searched for <em>the</em> language profile of autism. Across my studies, I kept meeting children who didn’t fit that picture. Some communicated through their strongest interests. Some used Modern Standard Arabic where other children use their spoken dialect. Others understood much more than standard language measures suggested.</p>
+    <p>I see this variation not as noise but as evidence. Instead of asking “What is the language profile of autism?”, my research asks: <strong class="font-semibold">what are the many language pathways in autism?</strong></p>
+  </div>
+
+  <figure class="my-10 border-l-4 border-accent dark:border-night-accent pl-5 sm:pl-6">
+    <blockquote class="font-serif text-lg sm:text-xl leading-relaxed space-y-1">
+      <p>“What does love feel like?”</p>
+      <p>“Excitement.”</p>
+      <p>“What does excitement feel like?”</p>
+      <p>“I can’t wait to learn everything about <em>God of War</em>.”</p>
+    </blockquote>
+    <figcaption class="mt-3 text-[15px] text-muted dark:text-night-muted">A six-year-old autistic boy, answering my questions. That answer changed my science.</figcaption>
+  </figure>
 
   <div class="grid gap-5 sm:grid-cols-2">
     {themes.map((t) => (
-      <div class={`rounded-2xl border-t-4 p-6 ${t.card}`}>
+      <div class={`rounded-2xl border-t-4 p-6 ${t.card} ${t.wide ? "sm:col-span-2" : ""}`}>
         <span class={`inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${t.pill}`}>{t.label}</span>
         <h2 class="font-serif text-xl font-semibold mt-3 mb-2">{t.title}</h2>
         <p>{t.text}</p>
       </div>
     ))}
   </div>
+
+  <Section title="Why it matters">
+    <p class="max-w-[65ch]">Mothers have often asked me, “Why doesn’t anyone understand my child?” Part of the answer may be that we have been looking for one expected pathway instead of recognizing many. When assessment and support reflect each child’s own language profile, families and clinicians can understand communication better, and researchers can build more accurate theories of language development in autism.</p>
+  </Section>
 
   <Section title="Current projects">
     <Row when="NYU"><p>Two-word combinations in autistic and typically developing preschoolers, with Prof. Sudha Arunachalam and Prof. Rhiannon Luyster.</p></Row>
@@ -85,4 +117,3 @@ const neutral = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac
     ))}
   </Section>
 </Base>
-
