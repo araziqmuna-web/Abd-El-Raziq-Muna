@@ -11,46 +11,40 @@ import pubs from "../data/publications.json";
 // "wide: true" makes a card stretch across the whole row.
 const themes = [
   {
-    title: "Sounds: two phonological profiles",
-    label: "Phonology",
-    card: "bg-[#f7eedd] border-[#b8862f] dark:bg-[#2f2818] dark:border-[#e0bd7a]",
-    pill: "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]",
-    text: "In a non-word repetition task, 72% of the autistic children performed like their typically developing peers, while 28% were at risk for phonological impairment. Swapping consonants was the most common error in all groups, suggesting delayed but similar phonological development.",
-  },
-  {
-    title: "Grammar: two morphosyntactic profiles",
-    label: "Morphosyntax",
-    card: "bg-[#efe7f6] border-[#8a63b3] dark:bg-[#2a2333] dark:border-[#b597d6]",
-    pill: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]",
-    text: "In a sentence repetition task, 43% of the autistic children had age-appropriate grammar, while 57% showed difficulties, especially with relative clauses and object questions. Their errors were mostly sentence fragments and simplified sentences.",
-  },
-  {
-    title: "Vocabulary and Arabic diglossia",
-    label: "Vocabulary",
+    title: "Arabic as a natural test case",
+    label: "Diglossia",
+    wide: true,
     card: "bg-[#e3f1eb] border-[#3f8a72] dark:bg-[#1c2f29] dark:border-[#7cc4aa]",
     pill: "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]",
-    text: "Vocabulary showed the same two profiles: autistic children with age-appropriate language knew as many words as their typically developing peers, while those with language impairment knew fewer. In a storytelling task, all children relied mostly on Spoken Arabic, but autistic children with age-appropriate language used more Modern Standard Arabic words, even though the task was in Spoken Arabic. This raises questions about pragmatic skills.",
+    text: "Arabic-speaking children grow up with two language varieties: a spoken dialect at home and Modern Standard Arabic at school. In my studies, all children relied mostly on the spoken dialect. Yet some autistic children, especially those with age-appropriate language, used more Modern Standard Arabic words when telling a story in the spoken dialect, which raises questions about pragmatic skills.",
   },
   {
-    title: "Network: how skills connect",
-    label: "Network analysis",
+    title: "Many language profiles",
+    label: "Morphosyntax, phonology, and vocabulary",
+    card: "bg-[#efe7f6] border-[#8a63b3] dark:bg-[#2a2333] dark:border-[#b597d6]",
+    pill: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]",
+    text: "Using sentence repetition, non-word repetition, and vocabulary tasks, I map which language areas are spared or affected in each child. In grammar, sounds, and vocabulary alike, some autistic children performed like their typically developing peers, while others showed difficulties. Cluster analyses reveal several distinct profiles rather than one autistic pattern.",
+  },
+  {
+    title: "Learning through strong interests",
+    label: "Clinical observation",
+    card: "bg-[#f7eedd] border-[#b8862f] border-dashed dark:bg-[#2f2818] dark:border-[#e0bd7a]",
+    pill: "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]",
+    text: "A child’s fascination with a video game is often described as repetitive behavior. In the children I have worked with as a clinician, it can also reveal vocabulary, curiosity, and learning. This is an observation from my clinical work, and a question I hope to study in the future.",
+  },
+  {
+    title: "Language, theory of mind, and cognition",
+    label: "Cognition",
     card: "bg-[#f8e7e4] border-[#c0604f] dark:bg-[#33221f] dark:border-[#e59a8c]",
     pill: "bg-[#f3dad6] text-[#7a3127] dark:bg-[#40272a] dark:text-[#f2c1b9]",
-    text: "A network analysis showed how language, theory of mind, and cognitive skills connect. In autistic children, language, especially pragmatics, was the most central skill. In typically developing children, age was the most central.",
-  },
-  {
-    title: "Clusters: four language profiles",
-    label: "Cluster analysis",
-    card: "bg-[#e0f0f2] border-[#3b8a96] dark:bg-[#1a2d30] dark:border-[#7cc0ca]",
-    pill: "bg-[#d3e9ec] text-[#1f5560] dark:bg-[#1f3a3f] dark:text-[#b3dfe6]",
-    text: "A cluster analysis identified four language profiles among autistic children: one strong across sounds, grammar, and vocabulary, and three with different strengths and weaknesses across language areas. Children with stronger language also did better on theory of mind and executive function tasks.",
+    text: "How does language relate to understanding other people’s minds, executive functions, and nonverbal reasoning? A network analysis showed that in autistic children, language, especially pragmatics, sits at the center of these skills.",
   },
   {
     title: "Bilingualism and memory",
     label: "Bilingualism",
     card: "bg-[#e6eef8] border-[#4a77b4] dark:bg-[#1d2738] dark:border-[#8fb2e3]",
     pill: "bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]",
-    text: "In my postdoctoral work in Fribourg, I studied 55 monolingual and bilingual autistic children speaking French or German. Better phonological working memory predicted better understanding of complex sentences, and bilingualism did not hinder comprehension.",
+    text: "With colleagues in Fribourg, I compare monolingual and bilingual autistic children to see how working memory and bilingual experience relate to understanding complex sentences. Bilingualism did not hinder comprehension.",
   },
 ];
 
