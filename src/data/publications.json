@@ -7,8 +7,11 @@
     "venue": "First Language",
     "doi": "10.1177/01427237261459833",
     "openAccess": false,
-    "topics": ["Morphosyntax", "Bilingualism"],
-    "summary": "Compares how monolingual and bilingual autistic children understand subject and object relative clauses, and how working memory and bilingual experience relate to their comprehension."
+    "topics": [
+      "Morphosyntax",
+      "Bilingualism"
+    ],
+    "summary": "55 autistic children (monolingual and bilingual, speaking French or German) were tested on sentences like “the boy that the girl is chasing.” Object relative clauses were harder than subject ones in both languages. Better phonological working memory predicted better comprehension, and more exposure to the test language helped bilingual children with the hardest sentences. Bilingualism did not hinder comprehension."
   },
   {
     "year": 2025,
@@ -18,19 +21,23 @@
     "venue": "Journal of Communication Disorders, 113, 106476",
     "doi": "10.1016/j.jcomdis.2024.106476",
     "openAccess": false,
-    "topics": ["Cognition"],
+    "topics": [
+      "Cognition"
+    ],
     "summary": "In 163 children, language (especially narrative pragmatics) was the most central skill in the autistic group’s network. Four distinct language profiles emerged, and autistic children with stronger language also did better on theory of mind and executive function tasks."
   },
   {
-    "year": 2024,
+    "year": 2025,
     "status": "published",
     "title": "Non-word repetition in Arabic-speaking children with and without autism spectrum disorder (ASD): A closer look into accuracy and error patterns",
     "authors": "Abd El-Raziq, M., Meir, N., & Saiegh-Haddad, E.",
-    "venue": "Clinical Linguistics & Phonetics, 38(11–12), 1088–1112",
+    "venue": "Clinical Linguistics & Phonetics, 39(10), 964–988",
     "doi": "10.1080/02699206.2024.2391904",
-    "openAccess": false,
-    "topics": ["Phonology"],
-    "summary": "Examines how accurately autistic and non-autistic children repeat new words built on Palestinian Arabic sound patterns, and the kinds of errors they make."
+    "openAccess": true,
+    "topics": [
+      "Phonology"
+    ],
+    "summary": "142 children repeated made-up words built on Palestinian Arabic sound patterns. 72% of the autistic children performed like their typically developing peers, while 28% were at risk for phonological impairment. Word length, more than complexity, made the task harder, and swapping consonants was the most common error in all groups, suggesting delayed but similar phonological development."
   },
   {
     "year": 2024,
@@ -40,7 +47,9 @@
     "venue": "Autism & Developmental Language Impairments, 9, 1–17",
     "doi": "10.1177/23969415241234649",
     "openAccess": true,
-    "topics": ["Morphosyntax"],
+    "topics": [
+      "Morphosyntax"
+    ],
     "summary": "Of 67 autistic children, 43% had age-appropriate grammar and 57% showed grammatical difficulties. Errors were mostly grammatical rather than pragmatic; relative clauses and object questions were hardest. Nonverbal IQ did not predict performance."
   },
   {
@@ -51,8 +60,10 @@
     "venue": "Language Acquisition, 31(3–4), 199–223",
     "doi": "10.1080/10489223.2023.2268615",
     "openAccess": false,
-    "topics": ["Vocabulary"],
-    "summary": "Tests nouns and verbs that are identical, related, or entirely different between spoken and Standard Arabic, in naming and storytelling, to see how diglossia shapes word learning in autism."
+    "topics": [
+      "Vocabulary"
+    ],
+    "summary": "Autistic children with age-appropriate language knew as many nouns and verbs as typically developing peers; those with language impairment knew fewer. All children used Spoken Arabic more than Modern Standard Arabic, but some autistic children overused Modern Standard Arabic words, even in everyday storytelling."
   },
   {
     "year": 2023,
@@ -62,7 +73,9 @@
     "venue": "Journal of Neural Transmission, 130(3), 433–457",
     "doi": "10.1007/s00702-023-02592-y",
     "openAccess": true,
-    "topics": ["Review"],
+    "topics": [
+      "Review"
+    ],
     "summary": "An international review of pragmatics, phonology, grammar and vocabulary in autism, the main language profiles, and how language relates to theory of mind, executive function and IQ."
   },
   {
@@ -73,7 +86,9 @@
     "venue": "Second Language Research, 36(4), 653–690",
     "doi": "10.1177/0267658319827052",
     "openAccess": false,
-    "topics": ["Bilingualism"],
+    "topics": [
+      "Bilingualism"
+    ],
     "summary": "Asks whether Arabic–Hebrew bilinguals activate the sounds of both languages when reading, even though the two languages use different scripts."
   },
   {
@@ -84,7 +99,9 @@
     "venue": "Development and Psychopathology",
     "doi": "",
     "openAccess": false,
-    "topics": ["Cognition"],
+    "topics": [
+      "Cognition"
+    ],
     "summary": ""
   },
   {
@@ -95,7 +112,9 @@
     "venue": "",
     "doi": "",
     "openAccess": false,
-    "topics": ["Morphosyntax"],
+    "topics": [
+      "Morphosyntax"
+    ],
     "summary": ""
   }
 ]

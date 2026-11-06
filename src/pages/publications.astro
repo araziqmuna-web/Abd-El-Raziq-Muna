@@ -1,120 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Publication from "../components/Publication.astro";
+import pubs from "../data/publications.json";
 
-  {
-    "year": 2026,
-    "status": "published",
-    "title": "Phonological working memory and bilingual experience shape syntactic comprehension in autistic children: A cross-linguistic study",
-    "authors": "Abd El-Raziq, M., Chondrogianni, V., Baumeister, F., Wolfer, P., & Durrleman, S.",
-    "venue": "First Language",
-    "doi": "10.1177/01427237261459833",
-    "openAccess": false,
-    "topics": [
-      "Morphosyntax",
-      "Bilingualism"
-    ],
-    "summary": "55 autistic children (monolingual and bilingual, speaking French or German) were tested on sentences like “the boy that the girl is chasing.” Object relative clauses were harder than subject ones in both languages. Better phonological working memory predicted better comprehension, and more exposure to the test language helped bilingual children with the hardest sentences. Bilingualism did not hinder comprehension."
-  },
-  {
-    "year": 2025,
-    "status": "published",
-    "title": "Language, theory of mind, and cognitive skills in autistic and non-autistic Arabic-speaking children: Evidence from network and cluster analyses",
-    "authors": "Abd El-Raziq, M., Saiegh-Haddad, E., & Meir, N.",
-    "venue": "Journal of Communication Disorders, 113, 106476",
-    "doi": "10.1016/j.jcomdis.2024.106476",
-    "openAccess": false,
-    "topics": [
-      "Cognition"
-    ],
-    "summary": "In 163 children, language (especially narrative pragmatics) was the most central skill in the autistic group’s network. Four distinct language profiles emerged, and autistic children with stronger language also did better on theory of mind and executive function tasks."
-  },
-  {
-    "year": 2025,
-    "status": "published",
-    "title": "Non-word repetition in Arabic-speaking children with and without autism spectrum disorder (ASD): A closer look into accuracy and error patterns",
-    "authors": "Abd El-Raziq, M., Meir, N., & Saiegh-Haddad, E.",
-    "venue": "Clinical Linguistics & Phonetics, 39(10), 964–988",
-    "doi": "10.1080/02699206.2024.2391904",
-    "openAccess": true,
-    "topics": [
-      "Phonology"
-    ],
-    "summary": "142 children repeated made-up words built on Palestinian Arabic sound patterns. 72% of the autistic children performed like their typically developing peers, while 28% were at risk for phonological impairment. Word length, more than complexity, made the task harder, and swapping consonants was the most common error in all groups, suggesting delayed but similar phonological development."
-  },
-  {
-    "year": 2024,
-    "status": "published",
-    "title": "Morphosyntactic skills in Arabic-speaking children with autism spectrum disorder: Evidence from error patterns in the sentence repetition task",
-    "authors": "Abd El-Raziq, M., Meir, N., & Saiegh-Haddad, E.",
-    "venue": "Autism & Developmental Language Impairments, 9, 1–17",
-    "doi": "10.1177/23969415241234649",
-    "openAccess": true,
-    "topics": [
-      "Morphosyntax"
-    ],
-    "summary": "Of 67 autistic children, 43% had age-appropriate grammar and 57% showed grammatical difficulties. Errors were mostly grammatical rather than pragmatic; relative clauses and object questions were hardest. Nonverbal IQ did not predict performance."
-  },
-  {
-    "year": 2024,
-    "status": "published",
-    "title": "Lexical skills in children with and without autism in the context of Arabic diglossia: Evidence from vocabulary and narrative tasks",
-    "authors": "Abd El-Raziq, M., Meir, N., & Saiegh-Haddad, E.",
-    "venue": "Language Acquisition, 31(3–4), 199–223",
-    "doi": "10.1080/10489223.2023.2268615",
-    "openAccess": false,
-    "topics": [
-      "Vocabulary"
-    ],
-    "summary": "Autistic children with age-appropriate language knew as many nouns and verbs as typically developing peers; those with language impairment knew fewer. All children used Spoken Arabic more than Modern Standard Arabic, but some autistic children overused Modern Standard Arabic words, even in everyday storytelling."
-  },
-  {
-    "year": 2023,
-    "status": "published",
-    "title": "Language in autism: Domains, profiles and co-occurring conditions",
-    "authors": "Schaeffer, J., Abd El-Raziq, M., Castroviejo, E., Durrleman, S., Ferré, S., Grama, I., … & Tuller, L.",
-    "venue": "Journal of Neural Transmission, 130(3), 433–457",
-    "doi": "10.1007/s00702-023-02592-y",
-    "openAccess": true,
-    "topics": [
-      "Review"
-    ],
-    "summary": "An international review of pragmatics, phonology, grammar and vocabulary in autism, the main language profiles, and how language relates to theory of mind, executive function and IQ."
-  },
-  {
-    "year": 2020,
-    "status": "published",
-    "title": "Cross-lingual phonological effects in different-script bilingual visual-word recognition",
-    "authors": "Peleg, O., Degani, T., Abd El-Raziq, M., & Taha, N.",
-    "venue": "Second Language Research, 36(4), 653–690",
-    "doi": "10.1177/0267658319827052",
-    "openAccess": false,
-    "topics": [
-      "Bilingualism"
-    ],
-    "summary": "Asks whether Arabic–Hebrew bilinguals activate the sounds of both languages when reading, even though the two languages use different scripts."
-  },
-  {
-    "year": 2026,
-    "status": "under review",
-    "title": "Behavioral inflexibility predicts family experience in families of autistic children over one year: A two-wave prospective study from the Pediatric Autism Research Cohort (PARC)",
-    "authors": "Manna, N.*, Abd El-Raziq, M.*, & Koller, J. (*co-first authors)",
-    "venue": "Development and Psychopathology",
-    "doi": "",
-    "openAccess": false,
-    "topics": [
-      "Cognition"
-    ],
-    "summary": ""
-  },
-  {
-    "year": 2026,
-    "status": "in preparation",
-    "title": "Semantic relation types and frequencies in two-word combinations of autistic and typically developing preschoolers",
-    "authors": "Abd El-Raziq, M., Steen, K., Ailun Guo, E., Luyster, R., & Arunachalam, S.",
-    "venue": "",
-    "doi": "",
-    "openAccess": false,
-    "topics": [
-      "Morphosyntax"
-    ],
-    "summary": ""
-  }
-]
+// Everything here comes from src/data/publications.json
+const published = pubs.filter((p) => p.status === "published").sort((a, b) => b.year - a.year);
+const forthcoming = pubs.filter((p) => p.status !== "published");
+const years = [...new Set(published.map((p) => p.year))];
+const topics = [...new Set(pubs.flatMap((p) => p.topics))];
+---
+<Base title="Publications">
+  <PageTitle title="Publications" intro="Peer-reviewed articles, newest first. Titles link to the published version." />
+
+  <div class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filter by topic" id="filters">
+    {["All", ...topics].map((t, i) => (
+      <button type="button" data-topic={t} aria-pressed={i === 0 ? "true" : "false"}
+        class="rounded-full border border-rule dark:border-night-rule px-3.5 py-1.5 text-sm font-medium aria-pressed:bg-accent aria-pressed:text-white aria-pressed:border-accent dark:aria-pressed:bg-night-accent dark:aria-pressed:text-night dark:aria-pressed:border-night-accent">{t}</button>
+    ))}
+  </div>
+
+  {years.map((y) => (
+    <section class="year-group">
+      <h2 class="font-serif text-2xl font-semibold mt-10 mb-1 text-muted dark:text-night-muted">{y}</h2>
+      {published.filter((p) => p.year === y).map((p) => <Publication pub={p} />)}
+    </section>
+  ))}
+
+  {forthcoming.length > 0 && (
+    <section class="year-group">
+      <h2 class="font-serif text-2xl font-semibold mt-12 mb-1 text-muted dark:text-night-muted">Under review and in preparation</h2>
+      {forthcoming.map((p) => <Publication pub={p} />)}
+    </section>
+  )}
+
+  <p id="empty" class="hidden mt-8 text-muted dark:text-night-muted">No publications with this topic yet.</p>
+</Base>
+
+<script is:inline>
+  (function () {
+    var buttons = document.querySelectorAll("#filters button");
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var topic = b.dataset.topic;
+        buttons.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        var any = false;
+        document.querySelectorAll(".year-group").forEach(function (g) {
+          var shown = 0;
+          g.querySelectorAll("article").forEach(function (a) {
+            var ok = topic === "All" || a.dataset.topics.split("|").indexOf(topic) > -1;
+            a.hidden = !ok; if (ok) shown++;
+          });
+          g.hidden = shown === 0; if (shown) any = true;
+        });
+        document.getElementById("empty").classList.toggle("hidden", any);
+      });
+    });
+  })();
+</script>
