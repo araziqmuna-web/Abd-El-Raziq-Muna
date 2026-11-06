@@ -1,6 +1,4 @@
 ---
-
-<img src="/muna.jpg" alt="Muna Abd El-Raziq" width="520" height="701" class="w-36 sm:w-44 aspect-[3/4] object-cover rounded-2xl mb-6 shadow-sm" />
 import Base from "../layouts/Base.astro";
 import Publication from "../components/Publication.astro";
 import site from "../data/site.json";
@@ -9,14 +7,19 @@ import pubs from "../data/publications.json";
 const recent = pubs.filter((p) => p.status === "published").sort((a, b) => b.year - a.year).slice(0, 3);
 ---
 <Base>
+  <img src="/muna.jpg" alt="Muna Abd El-Raziq" width="520" height="701" class="w-36 sm:w-44 aspect-[3/4] object-cover rounded-2xl mb-6 shadow-sm" />
   <p lang="ar" dir="rtl" class="font-arabic text-2xl text-muted dark:text-night-muted mb-2 text-left">أهلاً وسهلاً</p>
   <h1 class="font-serif text-5xl sm:text-6xl leading-[1.04] tracking-tight">{site.name}</h1>
   <p class="mt-3 font-medium text-muted dark:text-night-muted">{site.credentials}. {site.role}.</p>
 
   <p class="mt-8 text-xl sm:text-2xl font-serif leading-snug max-w-[34ch]">
-    I study how Arabic-speaking autistic children acquire language, with a particular focus on understanding the considerable variability in their language abilities and developmental profiles.
+    I study how autistic children who speak Arabic learn language, and why their language profiles differ so much from one child to the next.
+  </p>
   <p class="mt-6 max-w-[62ch]">
-    I’m a licensed speech-language pathologist and a researcher in clinical linguistics. My research focuses on structural language abilities in autistic children, language development, and the interaction between linguistic and cognitive factors, with a particular interest in Arabic diglossia and its implications for language acquisition and assessment.
+    I’m a licensed speech-language pathologist and a clinical linguistics researcher. My research looks at structural language in autism, and at how language develops in Arabic-speaking autistic children, with a special focus on Arabic diglossia.
+  </p>
+  <p class="mt-4 max-w-[62ch]">
+    Arabic is diglossic: children speak a local dialect at home and meet Modern Standard Arabic mostly at school. That makes it a revealing language for asking how sounds, grammar, and vocabulary develop in autism, and how language connects to theory of mind and other thinking skills. My work combines experimental tasks, error analysis, eye-tracking, and network and cluster statistics, and it is shaped by more than fifteen years of clinical work with children and families.
   </p>
 
   <div class="mt-8 flex flex-wrap gap-3">
@@ -38,3 +41,4 @@ const recent = pubs.filter((p) => p.status === "published").sort((a, b) => b.yea
     {recent.map((p) => <Publication pub={p} showSummary={true} />)}
   </section>
 </Base>
+
