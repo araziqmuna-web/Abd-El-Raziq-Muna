@@ -18,6 +18,26 @@ const c = {
 // The pipeline steps, with small drawn icons
 const stroke = 'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
 const steps = [
+  {---
+import Base from "../layouts/Base.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Section from "../components/Section.astro";
+import Row from "../components/Row.astro";
+import Publication from "../components/Publication.astro";
+import talks from "../data/talks.json";
+import pubs from "../data/publications.json";
+
+// The page tells one story in four parts. Each part has its own color.
+const c = {
+  clinic:   { dot: "bg-[#b8862f] text-white dark:bg-[#e0bd7a] dark:text-[#2f2818]", card: "bg-[#f7eedd] border-[#b8862f] dark:bg-[#2f2818] dark:border-[#e0bd7a]", pill: "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]" },
+  arabic:   { dot: "bg-[#3f8a72] text-white dark:bg-[#7cc4aa] dark:text-[#1c2f29]", card: "bg-[#e3f1eb] border-[#3f8a72] dark:bg-[#1c2f29] dark:border-[#7cc4aa]", pill: "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]" },
+  profiles: { dot: "bg-[#8a63b3] text-white dark:bg-[#b597d6] dark:text-[#2a2333]", card: "bg-[#efe7f6] border-[#8a63b3] dark:bg-[#2a2333] dark:border-[#b597d6]", pill: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]" },
+  research: { dot: "bg-[#4a77b4] text-white dark:bg-[#8fb2e3] dark:text-[#1d2738]", card: "bg-[#e6eef8] border-[#4a77b4] dark:bg-[#1d2738] dark:border-[#8fb2e3]", pill: "bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]" },
+};
+
+// The pipeline steps, with small drawn icons
+const stroke = 'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
+const steps = [
   {
     id: "arabic", title: "Arabic", note: "Who I am, and my language",
     ring: "bg-[#e3f1eb] border-[#3f8a72] text-[#22594a] dark:bg-[#1c2f29] dark:border-[#7cc4aa] dark:text-[#b5e3d2]",
@@ -148,7 +168,7 @@ const neutral = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac
           <p class="text-[15px] mt-1">Children with age-appropriate language knew as many words as their typically developing peers; children with language impairment knew fewer.</p>
         </div>
       </div>
-      <p class="mt-5 pt-4 border-t border-[#8a63b3]/30 dark:border-[#b597d6]/30"><span class="font-semibold">Arabic in storytelling:</span> all children relied mostly on the spoken dialect. Yet some autistic children, especially those with age-appropriate language, used more Modern Standard Arabic words when telling a story in the spoken dialect. Arabic in storytelling: 57 children told a picture story in Spoken Arabic, 19 in each group. Spoken Arabic predominated in all three groups. A minority of children in every group preferred Modern Standard Arabic, most often autistic children with age-appropriate language (4 of 19, compared with 1 of 19 in each of the other groups; a descriptive difference only). Whether this reflects a linguistic strength, a preference for the formal variety, or pragmatic differences remains an open question. This raises questions about how they understand when each variety is used.</p>
+      <p class="mt-5 pt-4 border-t border-[#8a63b3]/30 dark:border-[#b597d6]/30"><span class="font-semibold">Arabic in storytelling:</span> 57 children told a picture story in Spoken Arabic, 19 in each group. Spoken Arabic predominated in all three groups. A minority of children in every group preferred Modern Standard Arabic, most often autistic children with age-appropriate language (4 of 19, compared with 1 of 19 in each of the other groups; a descriptive difference only). Whether this reflects a linguistic strength, a preference for the formal variety, or pragmatic differences remains an open question.</p>
       <p class="mt-5 pt-4 border-t border-[#8a63b3]/30 dark:border-[#b597d6]/30"><span class="font-semibold">Four profiles:</span> a cluster analysis found one group strong across language areas and three groups with different strengths and weaknesses. A child can be strong in sounds and vocabulary, yet struggle with grammar.</p>
     </div>
   </section>
@@ -160,20 +180,20 @@ const neutral = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac
       <h2 class="font-serif text-2xl sm:text-3xl font-semibold">Where my research goes</h2>
     </div>
     <div class="grid gap-5 sm:grid-cols-2">
-      <div class="rounded-2xl border-t-4 p-6 bg-white border-[#4a77b4] shadow-sm dark:bg-white/[0.04] dark:border-[#8fb2e3]">
-        <span class="inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]">Language and cognition</span>
+      <div class={`rounded-2xl border-t-4 p-6 ${c.research.card}`}>
+        <span class={`inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${c.research.pill}`}>Language and cognition</span>
         <h3 class="font-serif text-xl font-semibold mt-3 mb-2">How skills connect</h3>
         <p>A network analysis showed that in autistic children, language, especially pragmatics, sits at the center of theory of mind and other thinking skills. Children with stronger language also did better on theory of mind tasks.</p>
       </div>
-      <div class="rounded-2xl border-t-4 p-6 bg-white border-[#4a77b4] shadow-sm dark:bg-white/[0.04] dark:border-[#8fb2e3]">
-        <span class="inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]">Bilingualism</span>
+      <div class={`rounded-2xl border-t-4 p-6 ${c.research.card}`}>
+        <span class={`inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${c.research.pill}`}>Bilingualism</span>
         <h3 class="font-serif text-xl font-semibold mt-3 mb-2">Bilingualism and memory</h3>
         <p>With colleagues in Fribourg, I studied monolingual and bilingual autistic children speaking French or German. Working memory helped them understand complex sentences, and bilingualism did not hinder comprehension.</p>
       </div>
-      <div class="rounded-2xl border-t-4 p-6 sm:col-span-2 bg-white border-[#4a77b4] shadow-sm dark:bg-white/[0.04] dark:border-[#8fb2e3]">
-        <span class="inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]">Next</span>
-        <h3 class="font-serif text-xl font-semibold mt-3 mb-2">From profiles to pathways</h3>
-        <p>My next goal is to understand the pathways behind these profiles: how each child’s language develops over time, what shapes these differences, and whether strong interests, like the one in the clinic story above, can open a way into language.</p>
+      <div class="rounded-2xl p-7 sm:col-span-2 bg-gradient-to-br from-[#2d4f86] to-[#4a77b4] text-white shadow-md dark:from-[#2a3f66] dark:to-[#3d5f93]">
+        <span class="inline-block rounded-md px-2.5 py-0.5 text-[13px] font-semibold bg-white/20 text-white">Next</span>
+        <h3 class="font-serif text-2xl font-semibold mt-3 mb-2">From profiles to pathways</h3>
+        <p class="text-white/95">My next goal is to understand the pathways behind these profiles: how each child’s language develops over time, what shapes these differences, and whether strong interests, like the one in the clinic story above, can open a way into language.</p>
       </div>
     </div>
   </section>
@@ -191,9 +211,12 @@ const neutral = "bg-[#e8e6dc] text-[#4f4c3a] dark:bg-[#33322a] dark:text-[#dedac
     </a>
   </Section>
 
-  <Section title="Current projects">
-    <Row when="NYU"><p>Two-word combinations in autistic and typically developing preschoolers, with Prof. Sudha Arunachalam and Prof. Rhiannon Luyster.</p></Row>
-    <Row when="NYU"><p>Lexical abilities in Arabic–English bilingual children, measured with eye-tracking and caregiver reports.</p></Row>
+  <Section title="Projects">
+    <Row when="NYU, now"><p>Two-word combinations in autistic and typically developing preschoolers, with Prof. Sudha Arunachalam and Prof. Rhiannon Luyster.</p></Row>
+    <Row when="NYU, now"><p>Lexical abilities in Arabic–English bilingual children, measured with eye-tracking and caregiver reports.</p></Row>
+    <Row when="Upcoming"><p>Real-time spoken-language comprehension in autism, using eye-tracking and neural measures of speech processing, including the frequency-following response (FFR).</p></Row>
+    <Row when="2024–2025"><p>Project coordinator (completed): morpho-lexical and morpho-syntactic development in Arabic-speaking toddlers, an Israel Science Foundation project with Prof. Elinor Saiegh-Haddad, Bar-Ilan University.</p></Row>
+  </Section>
 
   <Section title="Publications">
     {pubs.filter((p) => p.status === "published").map((p) => <Publication pub={p} />)}
