@@ -18,26 +18,6 @@ const c = {
 // The pipeline steps, with small drawn icons
 const stroke = 'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
 const steps = [
-  {---
-import Base from "../layouts/Base.astro";
-import PageTitle from "../components/PageTitle.astro";
-import Section from "../components/Section.astro";
-import Row from "../components/Row.astro";
-import Publication from "../components/Publication.astro";
-import talks from "../data/talks.json";
-import pubs from "../data/publications.json";
-
-// The page tells one story in four parts. Each part has its own color.
-const c = {
-  clinic:   { dot: "bg-[#b8862f] text-white dark:bg-[#e0bd7a] dark:text-[#2f2818]", card: "bg-[#f7eedd] border-[#b8862f] dark:bg-[#2f2818] dark:border-[#e0bd7a]", pill: "bg-[#f1e1c2] text-[#6a4b12] dark:bg-[#3d331f] dark:text-[#f0d79f]" },
-  arabic:   { dot: "bg-[#3f8a72] text-white dark:bg-[#7cc4aa] dark:text-[#1c2f29]", card: "bg-[#e3f1eb] border-[#3f8a72] dark:bg-[#1c2f29] dark:border-[#7cc4aa]", pill: "bg-[#d7ebe3] text-[#22594a] dark:bg-[#1f3a32] dark:text-[#b5e3d2]" },
-  profiles: { dot: "bg-[#8a63b3] text-white dark:bg-[#b597d6] dark:text-[#2a2333]", card: "bg-[#efe7f6] border-[#8a63b3] dark:bg-[#2a2333] dark:border-[#b597d6]", pill: "bg-[#e6dcf0] text-[#59397a] dark:bg-[#352b40] dark:text-[#dcc8f0]" },
-  research: { dot: "bg-[#4a77b4] text-white dark:bg-[#8fb2e3] dark:text-[#1d2738]", card: "bg-[#e6eef8] border-[#4a77b4] dark:bg-[#1d2738] dark:border-[#8fb2e3]", pill: "bg-[#dbe6f4] text-[#264d7a] dark:bg-[#223250] dark:text-[#bcd2f2]" },
-};
-
-// The pipeline steps, with small drawn icons
-const stroke = 'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
-const steps = [
   {
     id: "arabic", title: "Arabic", note: "Who I am, and my language",
     ring: "bg-[#e3f1eb] border-[#3f8a72] text-[#22594a] dark:bg-[#1c2f29] dark:border-[#7cc4aa] dark:text-[#b5e3d2]",
